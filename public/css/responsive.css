@@ -1,0 +1,104 @@
+@media (min-width: 1200px) {
+    html {
+        font-size: 118.75%;
+    }
+    #home_image {
+        top:17rem;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    html {
+        font-size: 81.25%;
+    }
+    #logo {
+        margin-top: 2rem;
+    }
+
+}
+
+@media (max-width: 767px) {
+    html {
+        font-size: 81.25%;
+    }
+
+    #features_1, #features_2 {
+    text-align:center;
+    }
+    
+
+    .feature_icon {
+    float:none;
+    width:3rem;
+    height:3rem;
+    margin-bottom: 1rem;
+    margin-right:0;
+    }
+
+    
+    #about {
+    margin-bottom:4.568em;
+    }
+    
+    p {
+        font-size: 1.5rem;
+    }
+    h4 {
+        font-size: 1.5rem;
+    }
+    #features_3 {
+        height:auto;
+    }
+    #features_3_content_left {
+        text-align:center;
+        padding-bottom:6.5rem;
+        padding-right:1rem;
+    }
+
+    #features_3_content_right {
+        text-align:center;
+        padding-left:1rem;
+
+    }
+
+    #features_3_content_center img{
+        text-align:center;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    
+    #logo {
+        margin-top: 1rem;
+    }
+    
+    #home_image {
+        top:17rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 62.5%;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+
+    h1 {font-size:3rem;}
+    #logo_header {margin-bottom:2em }
+    
+    #logo {
+        margin-top: 1rem;
+    }
+    #home_image {
+
+    top:25rem;
+    }
+    
+    #slogan {
+    width:90%;
+    }
+
+}
