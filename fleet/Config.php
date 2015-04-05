@@ -5,9 +5,9 @@ namespace Fleet;
 class Config {
 
 	public static function getInstance() {
-		if($INSTANCE == null)
-			$INSTANCE = new Config();
-		return $INSTANCE->getConfig();
+		if(Config::$INSTANCE == null)
+			Config::$INSTANCE = new Config();
+		return Config::$INSTANCE->getConfig();
 	}
 
 	private function __construct() {
@@ -22,7 +22,7 @@ class Config {
 		return $this->config[$env];
 	}
 
-	private $INSTANCE;
+	private static $INSTANCE;
 	private $config;
 	private $parser;
 }

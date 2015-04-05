@@ -5,7 +5,7 @@ namespace Fleet;
 class DB {
 
 	public static function getInstance() {
-		if($INSTANCE == null) {
+		if(DB::$INSTANCE == null) {
 			$config = \Fleet\Config::getInstance();
 			if(!isset($config->db->type) || !isset($config->db->host) || !isset($config->db->user) || !isset($config->db->name))
 				return null;
@@ -16,13 +16,13 @@ class DB {
 			$name = $config->db->name;
 			try {
 				$pdo = new \PDO("$type:dbname=$name;host=$host", $user, $pass);
-				$INSTANCE = new \NotOrm($pdo);
+				DB::$INSTANCE = new \NotOrm($pdo);
 			} catch (PDOException $e) {
 				echo 'Connection failed: ' . $e->getMessage();
 			}
 		}
-		return $INSTANCE;
-			
+		return DB::$INSTANCE;
+
 	}
 
 	private static $INSTANCE;
