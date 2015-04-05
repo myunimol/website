@@ -1,11 +1,63 @@
 {% extends 'dashboard-tpl.twig' %}
 
 {% block content %}
-<h1>MyUnimol Console</h1>
+<h1>MyUnimol Dashboard</h1>
 <p class="lead">
-  Invia push notifications facilmente!
+  Send push notifications easily!
 </p>
-<form class="ajax" action="send-notification" method="POST">
-
-</form>
+<div class="row-fluid">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <form id="sendNotification" action="{{app.url}}/dashboard/send-notification" method="POST">
+      <div class="form-group">
+        <label for="target">Target devices</label>
+        <select class="form-control" name="target" id="target" required>
+          <option value="">Select a target...</option>
+          <option value="android">Android</option>
+          <option value="all">All</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" name="title" id="title" placeholder="Notification title...">
+      </div>
+      <div class="form-group">
+        <label for="msg">Message</label>
+        <textarea class="form-control" name="msg" id="msg" placeholder="Notification message..." rows="4" required></textarea>
+      </div>
+      <button type="reset" class="btn btn-default">Reset</button>
+      <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+    <div style="height: 30px"></div>
+    <div class="lead text-warning" id="result"></div>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+  // wait for the DOM to be loaded
+  $(document).ready(function() {
+    // bind 'myForm' and provide a simple callback function
+    $('#sendNotification').ajaxForm({
+      target: '#result',
+      beforeSubmit: function(formData, jqForm, options) {
+        // var queryString = $.param(formData);
+        // alert(queryString);
+        if (formData[0].value.length < 1) {
+          alert("You must select the target devices!");
+          return false;
+        }
+        if (formData[2].value.length < 10) {
+          alert("Message must be more than 10 chars long");
+          return false;
+        }
+        return true;
+      },
+      success: function(responseText, statusText, xhr, $form) {
+        document.getElementById("sendNotification").reset();
+      }
+    });
+  });
+</script>
 {% endblock %}

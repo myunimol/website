@@ -54,14 +54,14 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{app.url}}/console">MyUnimol Dashboard</a>
+            <a class="navbar-brand" href="{{app.url}}/dashboard">MyUnimol Dashboard</a>
           </div>
           <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="{{app.url}}/console">Dashboard</a></li>
+              <li class="active"><a href="{{app.url}}/dashboard">Dashboard</a></li>
             </ul>
             <ul class="nav navbar-nav">
-              <li><a href="{{app.url}}/logout">Logout</a></li>
+              <li><a href="{{app.url}}/dashboard/logout">Logout</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -82,7 +82,9 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    {% block scripts %}{% endblock %}
   </body>
 </html>
