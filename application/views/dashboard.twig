@@ -1,8 +1,11 @@
-{% extends 'console-tpl.twig' %}
+{% extends 'dashboard-tpl.twig' %}
 
 {% block content %}
 <h1>MyUnimol Console</h1>
 <p class="lead">
   Invia push notifications facilmente!
 </p>
+<form class="ajax" action="send-notification" method="POST">
+
+</form>
 {% endblock %}
