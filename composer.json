@@ -2,8 +2,7 @@
     "require": {
         "twig/twig": "1.*",
         "klein/klein": "2.0.x",
-        "austinhyde/iniparser": "dev-master",
-        "vrana/notorm": "dev-master"
+        "austinhyde/iniparser": "dev-master"
     },
     "autoload": {
     	"psr-4": {
