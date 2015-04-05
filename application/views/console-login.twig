@@ -1,0 +1,15 @@
+{% extends 'console-tpl.twig' %}
+
+{% block nav %}{% endblock %}
+
+{% block content %}
+<h1>Dimmi quello che sai che io so...</h1>
+<p class="lead">
+  ...altrimenti va' via, straniero!
+</p>
+<form action="{{app.url}}/login" method="POST">
+  <input type="password" class="form-control" name="password" placeholder="dai baby...">
+  <br />
+  <button type="submit" class="btn btn-default">OK, sono pronto.</button>
+</form>
+{% endblock %}
