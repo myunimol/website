@@ -1,7 +1,15 @@
 <?php
-error_reporting(0);
 
-putenv("env=development");
+# in env.php you should set you environment like this
+# putenv("env=development"); or putenv("env=production");
+include('env.php');
+if(getenv('env')=='develpment')
+  error_reporting(E_ALL);
+else if (getenv('env')=='production')
+  error_reporting(0);
+
+session_start();
+
 require_once 'vendor/autoload.php';
 use \Fleet\Utils as Utils;
 
